@@ -1,16 +1,56 @@
-# React + Vite
+K BRAND & INTERIORS
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+ Furniture Workshop & Interior Design
 
-Currently, two official plugins are available:
+K BRAND & INTERIORS is a furniture workshop based in Nairobi, Kenya, creating stylish and practical furniture for modern spaces.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+We showcase custom furniture collections designed for bedrooms, living rooms, dining spaces, offices, and other interior spaces.
 
-## React Compiler
+ What We Offer
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 🛏️ Bedroom Furniture
+* 🛋️ Sofas & Couches
+* 🪑 Chairs
+* 🍽️ Dining Tables & Dining Sets
+* ☕ Coffee Tables
+* 🏠 Living Room Furniture
+* 💼 Office Furniture
+* 👶 Kids & Baby Furniture
+* 🌿 Outdoor Furniture
+* 🎨 Interior Design
 
-## Expanding the Oxlint configuration
+ Website Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+* Responsive modern design
+* Furniture category sections
+* Product image galleries
+* Mobile-friendly interface
+* WhatsApp customer enquiries
+* Contact and location information
+* Admin dashboard
+
+Built With
+
+* React
+* Vite
+* JavaScript
+* CSS
+* HTML
+
+ Location
+
+📍 Utawala, Nairobi, Kenya
+
+K BRAND & INTERIORS is located 500 meters from Astro Petrol Station, Utawala.
+
+ Contact
+
+📱 WhatsApp: +254 723 917 485
+
+ Project
+
+This project was created to provide K BRAND & INTERIORS with a professional online presence where customers can explore furniture collections and make enquiries.
+
+---
+
+⭐ Built as a real-world web development project by Daisy Ntinyari.

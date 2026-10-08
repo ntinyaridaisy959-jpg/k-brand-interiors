@@ -1,0 +1,1689 @@
+/* =========================================
+   GLOBAL APP
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #292521;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================================
+   TOP INFORMATION BAR
+========================================= */
+
+.top-bar {
+  height: 34px;
+  background: #1d1a17;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5%;
+
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.top-bar span {
+  color: #e8e2da;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  height: 82px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e0d9;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1400px;
+  height: 100%;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  width: 82px;
+  height: auto;
+  max-height: 55px;
+  object-fit: contain;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navigation a,
+.shop-button {
+  position: relative;
+
+  color: #292521;
+
+  background: none;
+  border: none;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.navigation a:hover,
+.shop-button:hover {
+  color: #a47c52;
+}
+
+
+/* =========================================
+   SHOP MENU
+========================================= */
+
+.shop-menu {
+  position: relative;
+}
+
+.shop-dropdown {
+  position: absolute;
+
+  top: 30px;
+  left: -20px;
+
+  width: 230px;
+
+  background: #ffffff;
+  border: 1px solid #e5e0d9;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  padding: 10px 0;
+
+  display: none;
+
+  z-index: 2000;
+}
+
+.shop-menu:hover .shop-dropdown,
+.shop-dropdown.show {
+  display: block;
+}
+
+.shop-dropdown a {
+  display: block;
+
+  padding: 12px 20px;
+
+  color: #292521;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+  text-transform: none;
+
+  white-space: nowrap;
+
+  transition: all 0.25s ease;
+}
+
+.shop-dropdown a:hover {
+  background: #f8f6f2;
+  color: #a47c52;
+  padding-left: 24px;
+}
+
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.login-button,
+.search-button,
+.cart-button {
+  background: none;
+  border: none;
+
+  color: #292521;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.login-button:hover,
+.search-button:hover,
+.cart-button:hover {
+  color: #a47c52;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-section {
+  width: 100%;
+  height: 680px;
+
+  position: relative;
+  overflow: hidden;
+
+  background: #292521;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+}
+
+.hero-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 17, 14, 0.68) 0%,
+      rgba(20, 17, 14, 0.38) 42%,
+      rgba(20, 17, 14, 0.08) 75%,
+      rgba(20, 17, 14, 0.18) 100%
+    );
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 8%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 90%;
+  max-width: 650px;
+
+  color: #ffffff;
+}
+
+.hero-small-title {
+  margin: 0 0 18px;
+
+  color: #d5b27a;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 3.5px;
+
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 5.5vw, 76px);
+
+  font-weight: 400;
+
+  line-height: 1.02;
+
+  letter-spacing: -1.5px;
+}
+
+.hero-content h1 span {
+  color: #dfbd83;
+}
+
+.hero-description {
+  max-width: 520px;
+
+  margin: 0 0 30px;
+
+  color: #eee9e2;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-block;
+
+  padding: 14px 25px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background: #ffffff;
+  color: #292521;
+}
+
+.primary-button:hover {
+  background: #d5b27a;
+  color: #ffffff;
+}
+
+.secondary-button {
+  background: transparent;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.secondary-button:hover {
+  background: #ffffff;
+  color: #292521;
+}
+
+
+/* =========================================
+   HERO ARROWS
+========================================= */
+
+.hero-section::before,
+.hero-section::after {
+  position: absolute;
+
+  z-index: 10;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background: rgba(20, 17, 14, 0.35);
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero-section::before {
+  content: "‹";
+  left: 22px;
+}
+
+.hero-section::after {
+  content: "›";
+  right: 22px;
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.intro-section,
+.decor-section,
+.trending-section,
+.why-section,
+.about-section,
+.reviews-section {
+  padding: 100px 7%;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-small-title {
+  margin-bottom: 15px;
+
+  color: #a47c52;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0 0 22px;
+
+  color: #292521;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+.section-heading p {
+  color: #716b64;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   WELCOME / INTRO
+========================================= */
+
+.intro-section {
+  background: #f8f6f2;
+}
+
+.intro-section .section-heading {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   BEDROOM COLLECTION
+========================================= */
+
+.bedroom-shop-section {
+  padding: 90px 6%;
+  background: #f8f6f2;
+}
+
+.bedroom-products {
+  max-width: 1200px;
+
+  margin: 50px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.bed-product-card {
+  background: #ffffff;
+
+  overflow: hidden;
+
+  border: 1px solid #e5e0d9;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bed-product-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.bed-product-card img {
+  width: 100%;
+  height: 330px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.bed-product-info {
+  padding: 22px;
+}
+
+.bed-product-info h3 {
+  margin: 0 0 10px;
+
+  color: #292521;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  text-transform: capitalize;
+}
+
+.bed-product-info p {
+  margin: 0 0 16px;
+
+  color: #6f6861;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.bed-product-info strong {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #292521;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   WHATSAPP ENQUIRY
+========================================= */
+
+.whatsapp-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 13px 15px;
+
+  background: #292521;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  transition: 0.25s ease;
+}
+
+.whatsapp-button:hover {
+  background: #a47c52;
+}
+
+
+/* =========================================
+   CATEGORY SECTIONS
+========================================= */
+
+.category-section {
+  width: 100%;
+
+  min-height: 580px;
+
+  background: #292521;
+
+  display: flex;
+  align-items: stretch;
+}
+
+.light-section {
+  background: #f8f6f2;
+}
+
+.category-content-box {
+  width: 86%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 80px 0;
+}
+
+.category-content-box.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.category-content-box h2 {
+  margin: 0 0 20px;
+
+  color: #292521;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+.category-content-box > div > p {
+  color: #716b64;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  margin-bottom: 28px;
+}
+
+.category-content-box .section-small-title {
+  color: #a47c52;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.image-placeholder {
+  height: 480px;
+
+  background: #e8e2da;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #9b9186;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================
+   DARK BUTTON
+========================================= */
+
+.dark-button {
+  padding: 14px 25px;
+
+  background: #292521;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.dark-button:hover {
+  background: #a47c52;
+}
+
+
+/* =========================================
+   DINING COLLECTION
+========================================= */
+
+.dining-products-section {
+  padding: 90px 6%;
+
+  background: #ffffff;
+}
+
+.dining-products {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 50px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.dining-product-card {
+  background: #f8f6f2;
+
+  border: 1px solid #e5e0d9;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.dining-product-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dining-product-card img {
+  width: 100%;
+  height: 330px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.dining-product-info {
+  padding: 22px;
+}
+
+.dining-product-info .product-category {
+  margin-bottom: 10px;
+
+  color: #a47c52;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.dining-product-info h3 {
+  margin: 0 0 10px;
+
+  color: #292521;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 22px;
+  font-weight: 400;
+
+  line-height: 1.3;
+}
+
+.dining-product-info p {
+  margin: 0 0 18px;
+
+  color: #716b64;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   DINING ROOM
+========================================= */
+
+.dining-room-section {
+  background: #f8f6f2;
+}
+
+
+/* =========================================
+   INTERIOR DECOR
+========================================= */
+
+.decor-section {
+  background: #ffffff;
+}
+
+.decor-grid {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.decor-card {
+  background: #f8f6f2;
+
+  padding-bottom: 25px;
+}
+
+.decor-placeholder {
+  height: 300px;
+
+  background: #e8e2da;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #8d8378;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+}
+
+.decor-card h3 {
+  margin: 22px 20px 8px;
+
+  color: #292521;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 24px;
+
+  font-weight: 400;
+}
+
+.decor-card p {
+  margin: 0 20px;
+
+  color: #716b64;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   TRENDING ITEMS
+========================================= */
+
+.trending-section {
+  background: #f8f6f2;
+}
+
+.trending-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.trend-card {
+  background: #ffffff;
+
+  padding-bottom: 25px;
+}
+
+.trend-placeholder {
+  height: 330px;
+
+  background: #e5dfd7;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #8d8378;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+}
+
+.trend-card h3 {
+  margin: 22px 20px 15px;
+
+  color: #292521;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 22px;
+
+  font-weight: 400;
+}
+
+.trend-card button {
+  margin-left: 20px;
+
+  padding: 11px 18px;
+
+  background: #292521;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.trend-card button:hover {
+  background: #a47c52;
+}
+
+
+/* =========================================
+   WHY K BRAND & INTERIORS
+========================================= */
+
+.why-section {
+  background: #292521;
+
+  color: #ffffff;
+}
+
+.why-section .section-heading h2 {
+  color: #ffffff;
+}
+
+.why-section .section-heading p {
+  color: #d5b27a;
+}
+
+.why-grid {
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 30px;
+}
+
+.why-grid > div {
+  padding: 30px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.why-grid span {
+  color: #d5b27a;
+
+  font-size: 12px;
+}
+
+.why-grid h3 {
+  margin: 18px 0 12px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 23px;
+
+  font-weight: 400;
+}
+
+.why-grid p {
+  margin: 0;
+
+  color: #cfc7be;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   ABOUT K BRAND
+========================================= */
+
+.about-section {
+  background: #f8f6f2;
+}
+
+.about-content {
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.about-content h2 {
+  margin: 0;
+
+  color: #292521;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.about-content .section-small-title {
+  margin-bottom: 20px;
+
+  color: #a47c52;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.about-content p {
+  margin: 0 0 20px;
+
+  color: #716b64;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   REVIEWS
+========================================= */
+
+.reviews-section {
+  background: #ffffff;
+}
+
+.reviews-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.review-card {
+  padding: 35px;
+
+  background: #f8f6f2;
+}
+
+.stars {
+  margin-bottom: 20px;
+
+  color: #a47c52;
+
+  letter-spacing: 3px;
+}
+
+.review-card p {
+  min-height: 70px;
+
+  color: #5f5953;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.review-card strong {
+  color: #292521;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-section {
+  padding: 70px 7%;
+
+  background: #a47c52;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  text-align: center;
+}
+
+.stats-section div {
+  padding: 20px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.stats-section div:last-child {
+  border-right: none;
+}
+
+.stats-section strong {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 42px;
+
+  font-weight: 400;
+}
+
+.stats-section span {
+  color: #ffffff;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   CONTACT / LOCATION
+========================================= */
+
+.contact-section {
+  padding: 110px 7%;
+
+  background: #292521;
+}
+
+.contact-content {
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.contact-content h2 {
+  margin: 0 0 25px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 5vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+.contact-content > div:first-child > p {
+  max-width: 550px;
+
+  color: #cfc7be;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.location-info {
+  margin: 30px 0;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.location-info span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #d5b27a;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.location-info strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 400;
+}
+
+.location-info p {
+  margin-top: 8px;
+
+  color: #cfc7be;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.contact-button {
+  width: fit-content;
+
+  padding: 14px 25px;
+
+  background: #ffffff;
+
+  color: #292521;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.contact-button:hover {
+  background: #d5b27a;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   LOCATION MAP
+========================================= */
+
+.map-container {
+  width: 100%;
+
+  height: 450px;
+
+  overflow: hidden;
+
+  background: #e5dfd7;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  display: block;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  padding: 65px 7%;
+
+  background: #1d1a17;
+
+  color: #ffffff;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 60px;
+}
+
+.footer img {
+  width: 90px;
+
+  height: auto;
+
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #aaa29a;
+
+  font-size: 13px;
+}
+
+.footer h4 {
+  margin: 0 0 20px;
+
+  color: #d5b27a;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.footer button {
+  display: block;
+
+  margin-bottom: 12px;
+
+  padding: 0;
+
+  background: none;
+
+  color: #aaa29a;
+
+  font-size: 12px;
+}
+
+.footer button:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright {
+  padding: 18px;
+
+  background: #151311;
+
+  color: #77716b;
+
+  text-align: center;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .navigation a,
+  .shop-button {
+    font-size: 10px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .login-button,
+  .search-button,
+  .cart-button {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - 900PX
+========================================= */
+
+@media (max-width: 900px) {
+
+  .navigation {
+    gap: 12px;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  .bedroom-products,
+  .dining-products,
+  .trending-grid,
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .decor-grid,
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-section div:nth-child(2) {
+    border-right: none;
+  }
+
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .category-content-box,
+  .category-content-box.reverse {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding: 80px 0;
+  }
+
+  .image-placeholder {
+    height: 380px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE - 600PX
+========================================= */
+
+@media (max-width: 600px) {
+
+  .top-bar {
+    display: none;
+  }
+
+  .header {
+    height: 72px;
+  }
+
+  .header-container {
+    width: 92%;
+  }
+
+  .brand img {
+    width: 70px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .shop-dropdown {
+    position: static;
+
+    width: 100%;
+
+    box-shadow: none;
+
+    border: none;
+  }
+
+  .hero-section {
+    height: 620px;
+  }
+
+  .hero-content {
+    left: 7%;
+
+    right: 7%;
+
+    width: auto;
+
+    max-width: none;
+  }
+
+  .hero-content h1 {
+    font-size: 44px;
+
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .hero-small-title {
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .hero-section::before,
+  .hero-section::after {
+    width: 36px;
+    height: 36px;
+
+    font-size: 19px;
+  }
+
+  .hero-section::before {
+    left: 12px;
+  }
+
+  .hero-section::after {
+    right: 12px;
+  }
+
+  .intro-section,
+  .decor-section,
+  .trending-section,
+  .why-section,
+  .about-section,
+  .reviews-section {
+    padding: 70px 6%;
+  }
+
+  .section-heading h2 {
+    font-size: 38px;
+  }
+
+  .bedroom-shop-section,
+  .dining-products-section {
+    padding: 65px 20px;
+  }
+
+  .bedroom-products,
+  .dining-products,
+  .trending-grid,
+  .reviews-grid,
+  .decor-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bed-product-card img,
+  .dining-product-card img {
+    height: 300px;
+  }
+
+  .decor-placeholder {
+    height: 260px;
+  }
+
+  .trend-placeholder {
+    height: 280px;
+  }
+
+  .category-content-box,
+  .category-content-box.reverse {
+    width: 88%;
+  }
+
+  .category-content-box {
+    padding: 65px 0;
+  }
+
+  .image-placeholder {
+    height: 320px;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr 1fr;
+
+    padding: 45px 4%;
+  }
+
+  .stats-section div {
+    border-right: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .stats-section strong {
+    font-size: 32px;
+  }
+
+  .contact-section {
+    padding: 80px 7%;
+  }
+
+  .map-container {
+    height: 350px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding: 50px 8%;
+  }
+
+}

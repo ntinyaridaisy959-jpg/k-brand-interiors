@@ -1,0 +1,315 @@
+.admin-dashboard {
+min-height: 100vh;
+display: flex;
+background: #f5f1eb;
+color: #292521;
+font-family: Arial, sans-serif;
+}
+
+.admin-sidebar {
+width: 250px;
+min-height: 100vh;
+background: #292521;
+color: white;
+padding: 28px 18px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+}
+
+.admin-logo {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 0 8px 35px;
+}
+
+.admin-logo-symbol {
+width: 45px;
+height: 45px;
+border: 1px solid #d5b27a;
+color: #d5b27a;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 22px;
+font-weight: bold;
+}
+
+.admin-logo h2 {
+margin: 0;
+font-size: 17px;
+}
+
+.admin-logo p {
+margin: 4px 0 0;
+color: #d5b27a;
+font-size: 11px;
+letter-spacing: 2px;
+}
+
+.admin-navigation {
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+.admin-nav {
+border: none;
+background: transparent;
+color: #d8d2ca;
+padding: 14px 15px;
+text-align: left;
+font-size: 14px;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.admin-nav:hover {
+background: #403b36;
+color: white;
+}
+
+.admin-nav.active {
+background: #a47c52;
+color: white;
+}
+
+.admin-logout {
+margin-top: auto;
+padding: 13px;
+border: 1px solid #665f57;
+background: transparent;
+color: white;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.admin-main {
+flex: 1;
+min-width: 0;
+padding: 30px 40px;
+box-sizing: border-box;
+}
+
+.admin-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 30px;
+}
+
+.admin-header span {
+font-size: 11px;
+letter-spacing: 2px;
+color: #a47c52;
+font-weight: bold;
+}
+
+.admin-header h1 {
+margin: 7px 0 0;
+font-size: 30px;
+}
+
+.admin-user {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.admin-user-icon {
+width: 42px;
+height: 42px;
+border-radius: 50%;
+background: #a47c52;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: bold;
+}
+
+.admin-user strong {
+display: block;
+font-size: 14px;
+}
+
+.admin-user small {
+display: block;
+color: #777;
+font-size: 12px;
+margin-top: 3px;
+}
+
+.admin-welcome {
+background: white;
+padding: 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-radius: 6px;
+margin-bottom: 22px;
+}
+
+.admin-welcome h2 {
+margin: 8px 0;
+font-size: 25px;
+}
+
+.admin-welcome p {
+margin: 0;
+color: #777;
+}
+
+.admin-welcome-logo {
+font-size: 80px;
+font-weight: bold;
+color: #d5b27a;
+}
+
+.admin-stats {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 18px;
+margin-bottom: 22px;
+}
+
+.admin-stat {
+background: white;
+padding: 22px;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.admin-stat span {
+color: #777;
+font-size: 13px;
+letter-spacing: 0;
+}
+
+.admin-stat strong {
+font-size: 30px;
+color: #292521;
+}
+
+.admin-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 22px;
+}
+
+.admin-box {
+background: white;
+padding: 25px;
+border-radius: 6px;
+}
+
+.admin-box > span {
+font-size: 11px;
+letter-spacing: 2px;
+color: #a47c52;
+font-weight: bold;
+}
+
+.admin-box h3 {
+margin: 8px 0 20px;
+font-size: 19px;
+}
+
+.admin-row {
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid #eeeeee;
+padding: 14px 0;
+}
+
+.admin-row p {
+margin: 0;
+}
+
+.admin-row strong {
+color: #a47c52;
+}
+
+.admin-actions button {
+display: block;
+width: 100%;
+padding: 13px;
+margin-bottom: 10px;
+border: 1px solid #a47c52;
+background: white;
+color: #292521;
+cursor: pointer;
+text-align: left;
+border-radius: 4px;
+}
+
+.admin-actions button:hover {
+background: #a47c52;
+color: white;
+}
+
+.admin-empty {
+background: white;
+padding: 60px;
+border-radius: 6px;
+text-align: center;
+}
+
+.admin-empty p {
+color: #777;
+}
+
+@media (max-width: 900px) {
+.admin-sidebar {
+width: 210px;
+}
+
+.admin-main {
+padding: 25px;
+}
+
+.admin-stats {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.admin-grid {
+grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 650px) {
+.admin-dashboard {
+display: block;
+}
+
+.admin-sidebar {
+width: 100%;
+min-height: auto;
+}
+
+.admin-navigation {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+
+.admin-logout {
+margin-top: 20px;
+}
+
+.admin-header {
+flex-direction: column;
+align-items: flex-start;
+gap: 20px;
+}
+
+.admin-stats {
+grid-template-columns: 1fr;
+}
+
+.admin-main {
+padding: 20px;
+}
+}
